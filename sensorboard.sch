@@ -8255,6 +8255,7 @@ Types:&lt;p&gt;
 <part name="U$2" library="humidity" deviceset="HYT271" device=""/>
 <part name="+3V11" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
+<part name="X2" library="con-wago" deviceset="233-206" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8345,6 +8346,7 @@ sensor)</text>
 <instance part="U$2" gate="A" x="149.86" y="73.66"/>
 <instance part="+3V11" gate="G$1" x="139.7" y="83.82"/>
 <instance part="GND12" gate="1" x="139.7" y="63.5"/>
+<instance part="X2" gate="G$1" x="101.6" y="53.34" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -8653,6 +8655,11 @@ sensor)</text>
 <wire x1="27.94" y1="30.48" x2="22.86" y2="30.48" width="0.1524" layer="91"/>
 <label x="22.86" y="30.48" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="X2" gate="G$1" pin="B-2"/>
+<wire x1="99.06" y1="45.72" x2="99.06" y2="43.18" width="0.1524" layer="91" style="longdash"/>
+<label x="99.06" y="43.18" size="1.27" layer="95" rot="R270" xref="yes"/>
+</segment>
 </net>
 <net name="MISO" class="0">
 <segment>
@@ -8660,12 +8667,22 @@ sensor)</text>
 <wire x1="27.94" y1="27.94" x2="22.86" y2="27.94" width="0.1524" layer="91"/>
 <label x="22.86" y="27.94" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="X2" gate="G$1" pin="B-1"/>
+<wire x1="96.52" y1="45.72" x2="96.52" y2="43.18" width="0.1524" layer="91" style="longdash"/>
+<label x="96.52" y="43.18" size="1.27" layer="95" rot="R270" xref="yes"/>
+</segment>
 </net>
 <net name="SCLK" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="SCLK"/>
 <wire x1="27.94" y1="25.4" x2="22.86" y2="25.4" width="0.1524" layer="91"/>
 <label x="22.86" y="25.4" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="X2" gate="G$1" pin="B-3"/>
+<wire x1="101.6" y1="45.72" x2="101.6" y2="43.18" width="0.1524" layer="91" style="longdash"/>
+<label x="101.6" y="43.18" size="1.27" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -8684,6 +8701,11 @@ sensor)</text>
 <wire x1="53.34" y1="20.32" x2="58.42" y2="20.32" width="0.1524" layer="91"/>
 <label x="58.42" y="20.32" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="X2" gate="G$1" pin="B-4"/>
+<wire x1="104.14" y1="45.72" x2="104.14" y2="43.18" width="0.1524" layer="91" style="longdash"/>
+<label x="104.14" y="43.18" size="1.27" layer="95" rot="R270" xref="yes"/>
+</segment>
 </net>
 <net name="SCL" class="0">
 <segment>
@@ -8700,6 +8722,11 @@ sensor)</text>
 <pinref part="U$1" gate="G$1" pin="(PC0)SCL"/>
 <wire x1="53.34" y1="22.86" x2="58.42" y2="22.86" width="0.1524" layer="91"/>
 <label x="58.42" y="22.86" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="X2" gate="G$1" pin="B-5"/>
+<wire x1="106.68" y1="45.72" x2="106.68" y2="43.18" width="0.1524" layer="91" style="longdash"/>
+<label x="106.68" y="43.18" size="1.27" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="XCLR" class="0">
@@ -8725,6 +8752,16 @@ sensor)</text>
 <wire x1="137.16" y1="20.32" x2="137.16" y2="17.78" width="0.1524" layer="91"/>
 <junction x="137.16" y="17.78"/>
 <label x="134.62" y="17.78" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="PA0"/>
+<wire x1="27.94" y1="40.64" x2="22.86" y2="40.64" width="0.1524" layer="91" style="longdash"/>
+<label x="22.86" y="40.64" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="X2" gate="G$1" pin="B-6"/>
+<wire x1="109.22" y1="45.72" x2="109.22" y2="43.18" width="0.1524" layer="91" style="longdash"/>
+<label x="109.22" y="43.18" size="1.27" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 </nets>
