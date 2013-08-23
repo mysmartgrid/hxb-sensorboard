@@ -8605,26 +8605,15 @@ Types:&lt;p&gt;
 </library>
 <library name="humidity">
 <packages>
-<package name="HYT271">
-<circle x="0" y="6.35" radius="1.796" width="0.127" layer="51"/>
-<wire x1="-2.55" y1="10.2" x2="2.55" y2="10.2" width="0.127" layer="51"/>
-<wire x1="2.55" y1="10.2" x2="2.55" y2="0" width="0.127" layer="51"/>
-<wire x1="2.55" y1="0" x2="1.905" y2="0" width="0.127" layer="51"/>
-<wire x1="1.905" y1="0" x2="0.635" y2="0" width="0.127" layer="51"/>
-<wire x1="0.635" y1="0" x2="-0.635" y2="0" width="0.127" layer="51"/>
-<wire x1="-0.635" y1="0" x2="-1.905" y2="0" width="0.127" layer="51"/>
-<wire x1="-1.905" y1="0" x2="-2.55" y2="0" width="0.127" layer="51"/>
-<wire x1="-2.55" y1="0" x2="-2.55" y2="10.2" width="0.127" layer="51"/>
-<wire x1="-1.905" y1="0" x2="-1.905" y2="-10.5" width="0.127" layer="51"/>
-<wire x1="-0.635" y1="0" x2="-0.635" y2="-10.5" width="0.127" layer="51"/>
-<wire x1="0.635" y1="0" x2="0.635" y2="-10.5" width="0.127" layer="51"/>
-<wire x1="1.905" y1="0" x2="1.905" y2="-10.5" width="0.127" layer="51"/>
-<smd name="GND" x="-0.635" y="-10" dx="1.4224" dy="0.7112" layer="1" rot="R90"/>
-<smd name="SCL" x="1.905" y="-10" dx="1.4224" dy="0.7112" layer="1" rot="R90"/>
-<smd name="SDA" x="-1.905" y="-10" dx="1.4224" dy="0.7112" layer="1" rot="R90"/>
-<smd name="VDD" x="0.635" y="-10" dx="1.4224" dy="0.7112" layer="1" rot="R90"/>
-<text x="-2" y="2.54" size="0.8128" layer="51">HYT271</text>
-<rectangle x1="-3.81" y1="-11.43" x2="3.81" y2="11.43" layer="41"/>
+<package name="HYT271-THT">
+<pad name="SDA" x="-1.905" y="0" drill="0.6"/>
+<pad name="GND" x="-0.635" y="0" drill="0.6"/>
+<pad name="VDD" x="0.635" y="0" drill="0.6"/>
+<pad name="SCL" x="1.905" y="0" drill="0.6"/>
+<rectangle x1="-3.81" y1="-1.27" x2="3.81" y2="1.27" layer="41"/>
+<rectangle x1="-3.81" y1="-1.27" x2="3.81" y2="1.27" layer="42"/>
+<text x="-3.81" y="1.27" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.81" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -8642,17 +8631,17 @@ Types:&lt;p&gt;
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="HYT271">
+<deviceset name="HYT271-THT">
 <gates>
-<gate name="A" symbol="HYT271" x="0" y="0"/>
+<gate name="G$1" symbol="HYT271" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="HYT271">
+<device name="" package="HYT271-THT">
 <connects>
-<connect gate="A" pin="GND" pad="GND"/>
-<connect gate="A" pin="SCL" pad="SCL"/>
-<connect gate="A" pin="SDA" pad="SDA"/>
-<connect gate="A" pin="VDD" pad="VDD"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="SCL" pad="SCL"/>
+<connect gate="G$1" pin="SDA" pad="SDA"/>
+<connect gate="G$1" pin="VDD" pad="VDD"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -9031,7 +9020,7 @@ Based on the following sources:
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="+3V10" library="supply1" deviceset="+3V3" device=""/>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
-<part name="U$2" library="humidity" deviceset="HYT271" device=""/>
+<part name="U$2" library="humidity" deviceset="HYT271-THT" device=""/>
 <part name="+3V11" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="X2" library="con-wago" deviceset="233-206" device=""/>
@@ -9167,7 +9156,7 @@ sensor)</text>
 <instance part="GND10" gate="1" x="185.42" y="48.26"/>
 <instance part="+3V10" gate="G$1" x="177.8" y="71.12"/>
 <instance part="P+3" gate="1" x="170.18" y="68.58"/>
-<instance part="U$2" gate="A" x="149.86" y="73.66"/>
+<instance part="U$2" gate="G$1" x="149.86" y="73.66"/>
 <instance part="+3V11" gate="G$1" x="139.7" y="83.82"/>
 <instance part="GND12" gate="1" x="139.7" y="63.5"/>
 <instance part="X2" gate="G$1" x="208.28" y="66.04" rot="R90"/>
@@ -9300,7 +9289,7 @@ sensor)</text>
 <junction x="185.42" y="58.42"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="A" pin="GND"/>
+<pinref part="U$2" gate="G$1" pin="GND"/>
 <pinref part="GND12" gate="1" pin="GND"/>
 <wire x1="142.24" y1="68.58" x2="139.7" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="68.58" x2="139.7" y2="66.04" width="0.1524" layer="91"/>
@@ -9430,7 +9419,7 @@ sensor)</text>
 <wire x1="137.16" y1="33.02" x2="137.16" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="A" pin="VDD"/>
+<pinref part="U$2" gate="G$1" pin="VDD"/>
 <pinref part="+3V11" gate="G$1" pin="+3V3"/>
 <wire x1="142.24" y1="78.74" x2="139.7" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="78.74" x2="139.7" y2="81.28" width="0.1524" layer="91"/>
@@ -9674,7 +9663,7 @@ sensor)</text>
 <label x="142.24" y="119.38" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="A" pin="SDA"/>
+<pinref part="U$2" gate="G$1" pin="SDA"/>
 <wire x1="142.24" y1="71.12" x2="139.7" y2="71.12" width="0.1524" layer="91"/>
 <label x="139.7" y="71.12" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -9703,7 +9692,7 @@ sensor)</text>
 <label x="142.24" y="116.84" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="A" pin="SCL"/>
+<pinref part="U$2" gate="G$1" pin="SCL"/>
 <wire x1="142.24" y1="76.2" x2="139.7" y2="76.2" width="0.1524" layer="91"/>
 <label x="139.7" y="76.2" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
