@@ -8366,6 +8366,10 @@ Based on the following sources:
 <part name="JP5" library="pinhead" deviceset="PINHD-1X4" device=""/>
 <part name="U$5" library="dallas" deviceset="DS18S20" device=""/>
 <part name="U$3" library="humidity" deviceset="BMP085" device=""/>
+<part name="+3V12" library="supply1" deviceset="+3V3" device=""/>
+<part name="+3V13" library="supply1" deviceset="+3V3" device=""/>
+<part name="R2" library="rcl" deviceset="R-EU_" device="R0805" value="4k7"/>
+<part name="R19" library="rcl" deviceset="R-EU_" device="R0805" value="4k7"/>
 </parts>
 <sheets>
 <sheet>
@@ -8406,6 +8410,7 @@ sensor)</text>
 <text x="144.78" y="172.72" size="1.27" layer="97">buttons</text>
 <wire x1="220.98" y1="78.74" x2="162.56" y2="78.74" width="0.1524" layer="97" style="longdash"/>
 <text x="167.64" y="76.2" size="1.27" layer="97">connectors#</text>
+<text x="93.98" y="53.34" size="1.778" layer="97">I2C pull ups</text>
 </plain>
 <instances>
 <instance part="FRAME2" gate="G$1" x="0" y="0"/>
@@ -8506,6 +8511,10 @@ sensor)</text>
 <instance part="JP5" gate="A" x="195.58" y="33.02"/>
 <instance part="U$5" gate="G$1" x="154.94" y="30.48"/>
 <instance part="U$3" gate="G$1" x="154.94" y="116.84"/>
+<instance part="+3V12" gate="G$1" x="99.06" y="45.72"/>
+<instance part="+3V13" gate="G$1" x="111.76" y="45.72"/>
+<instance part="R2" gate="G$1" x="99.06" y="35.56" rot="R90"/>
+<instance part="R19" gate="G$1" x="111.76" y="35.56" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -8697,6 +8706,16 @@ sensor)</text>
 <pinref part="+3V7" gate="G$1" pin="+3V3"/>
 <wire x1="147.32" y1="121.92" x2="134.62" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="121.92" x2="134.62" y2="124.46" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="+3V12" gate="G$1" pin="+3V3"/>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="99.06" y1="43.18" x2="99.06" y2="40.64" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="+3V13" gate="G$1" pin="+3V3"/>
+<pinref part="R19" gate="G$1" pin="2"/>
+<wire x1="111.76" y1="43.18" x2="111.76" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -8918,6 +8937,11 @@ sensor)</text>
 <wire x1="147.32" y1="111.76" x2="144.78" y2="111.76" width="0.1524" layer="91"/>
 <label x="144.78" y="111.76" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="R2" gate="G$1" pin="1"/>
+<wire x1="99.06" y1="30.48" x2="99.06" y2="27.94" width="0.1524" layer="91"/>
+<label x="99.06" y="27.94" size="1.27" layer="95" rot="R270" xref="yes"/>
+</segment>
 </net>
 <net name="SCL" class="0">
 <segment>
@@ -8939,6 +8963,11 @@ sensor)</text>
 <pinref part="U$3" gate="G$1" pin="SCL"/>
 <wire x1="147.32" y1="114.3" x2="144.78" y2="114.3" width="0.1524" layer="91"/>
 <label x="144.78" y="114.3" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R19" gate="G$1" pin="1"/>
+<wire x1="111.76" y1="30.48" x2="111.76" y2="27.94" width="0.1524" layer="91"/>
+<label x="111.76" y="27.94" size="1.27" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="DQ" class="0">
