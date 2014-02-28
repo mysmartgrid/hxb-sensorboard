@@ -113,7 +113,7 @@
 <hole x="36" y="29" drill="3.2"/>
 <text x="52.8" y="67.6" size="1.778" layer="1" font="vector" ratio="10" rot="SR270">hexabus sensorboard</text>
 <hole x="13.46" y="60.25" drill="3.2"/>
-<text x="49.9" y="49.4" size="1.4224" layer="1" font="vector" ratio="12" rot="SR270">20140219</text>
+<text x="49.9" y="49.4" size="1.4224" layer="1" font="vector" ratio="12" rot="SR270">20140228</text>
 </plain>
 <libraries>
 <library name="hexasense">
