@@ -8403,13 +8403,10 @@ Based on the following sources:
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="+3V2" library="supply1" deviceset="+3V3" device=""/>
-<part name="+3V3" library="supply1" deviceset="+3V3" device=""/>
-<part name="P+2" library="supply1" deviceset="+5V" device=""/>
 <part name="R1" library="rcl" deviceset="R-EU_" device="R0805" value="1k"/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="R0805" value="100k"/>
 <part name="R5" library="rcl" deviceset="R-EU_" device="R0805" value="470k"/>
 <part name="R6" library="rcl" deviceset="R-EU_" device="R0805" value="470k"/>
-<part name="R11" library="rcl" deviceset="R-EU_" device="R0805" value="0R"/>
 <part name="U2" library="hexasense" deviceset="LM324D" device=""/>
 <part name="+3V4" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
@@ -8474,7 +8471,6 @@ Based on the following sources:
 <text x="38.1" y="55.88" size="1.778" layer="97">hexabus module</text>
 <text x="7.62" y="170.18" size="1.778" layer="97">voltage regulator</text>
 <text x="33.02" y="129.54" size="1.778" layer="97">measure amplifier</text>
-<text x="78.74" y="170.18" size="1.778" layer="97">bypass if no voltage regulator is used</text>
 <wire x1="5.08" y1="132.08" x2="71.12" y2="132.08" width="0.1524" layer="97" style="longdash"/>
 <wire x1="71.12" y1="175.26" x2="71.12" y2="132.08" width="0.1524" layer="97" style="longdash"/>
 <wire x1="71.12" y1="132.08" x2="129.54" y2="132.08" width="0.1524" layer="97" style="longdash"/>
@@ -8522,8 +8518,6 @@ sensor)</text>
 <instance part="GND3" gate="1" x="17.78" y="137.16"/>
 <instance part="GND4" gate="1" x="60.96" y="137.16"/>
 <instance part="+3V2" gate="G$1" x="60.96" y="165.1"/>
-<instance part="+3V3" gate="G$1" x="101.6" y="165.1"/>
-<instance part="P+2" gate="1" x="86.36" y="165.1"/>
 <instance part="R1" gate="G$1" x="60.96" y="111.76" rot="R90"/>
 <instance part="R3" gate="G$1" x="15.24" y="114.3" rot="R90"/>
 <instance part="R5" gate="G$1" x="43.18" y="78.74" rot="R90"/>
@@ -8531,7 +8525,6 @@ sensor)</text>
 <attribute name="NAME" x="31.75" y="95.4786" size="1.778" layer="95"/>
 <attribute name="VALUE" x="36.83" y="95.758" size="1.778" layer="96"/>
 </instance>
-<instance part="R11" gate="G$1" x="93.98" y="157.48"/>
 <instance part="U2" gate="A" x="88.9" y="99.06"/>
 <instance part="+3V4" gate="G$1" x="68.58" y="121.92"/>
 <instance part="GND5" gate="1" x="68.58" y="76.2"/>
@@ -8754,12 +8747,6 @@ sensor)</text>
 <junction x="60.96" y="157.48"/>
 </segment>
 <segment>
-<pinref part="R11" gate="G$1" pin="2"/>
-<pinref part="+3V3" gate="G$1" pin="+3V3"/>
-<wire x1="99.06" y1="157.48" x2="101.6" y2="157.48" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="157.48" x2="101.6" y2="162.56" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="U2" gate="A" pin="VCC+"/>
 <pinref part="+3V4" gate="G$1" pin="+3V3"/>
 <wire x1="71.12" y1="109.22" x2="68.58" y2="109.22" width="0.1524" layer="91"/>
@@ -8830,12 +8817,6 @@ sensor)</text>
 <pinref part="C1" gate="G$1" pin="1"/>
 <wire x1="10.16" y1="149.86" x2="10.16" y2="157.48" width="0.1524" layer="91"/>
 <junction x="10.16" y="157.48"/>
-</segment>
-<segment>
-<pinref part="R11" gate="G$1" pin="1"/>
-<pinref part="P+2" gate="1" pin="+5V"/>
-<wire x1="88.9" y1="157.48" x2="86.36" y2="157.48" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="157.48" x2="86.36" y2="162.56" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="P+3" gate="1" pin="+5V"/>
